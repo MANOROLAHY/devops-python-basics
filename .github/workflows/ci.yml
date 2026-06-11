@@ -2,7 +2,7 @@ name: CI/CD Level 2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
@@ -25,4 +25,6 @@ jobs:
         run: flake8 .
 
       - name: Run tests
-        run: PYTHONPATH=. pytest -v 
+        run: pytest -v
+        env:
+          PYTHONPATH: .
